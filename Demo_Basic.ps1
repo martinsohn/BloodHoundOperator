@@ -20,9 +20,10 @@ Invoke-BHComposer Up
 ############################################### Connect
 $BHTokenID = Get-Clipboard
 $BHTokenKey = Get-Clipboard | ConvertTo-SecureString -AsPlainText -Force
+$Server = 'localhost'
 
 ## New Session
-New-BHSession -TokenID $BHTokenID -Token $BHTokenKey
+New-BHSession -TokenID $BHTokenID -Token $BHTokenKey -Server $Server
 
 # Check session
 Get-BHSession
